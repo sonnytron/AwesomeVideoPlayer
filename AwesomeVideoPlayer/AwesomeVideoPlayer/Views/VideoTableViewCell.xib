@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoTableViewCell" rowHeight="75" id="KGk-i7-Jjw" customClass="VideoTableViewCell" customModule="AwesomeVideoPlayer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="74.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FNM-9o-GFu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="74.5"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DIo-DJ-KuS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="74.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ho-6s-zvf">
+                        <rect key="frame" x="8" y="8" width="78.5" height="18"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNO-RB-VYK">
+                        <rect key="frame" x="94" y="8" width="37.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWc-eP-3Kd">
+                        <rect key="frame" x="8" y="48.5" width="304" height="18"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kNO-RB-VYK" firstAttribute="bottom" secondItem="2ho-6s-zvf" secondAttribute="bottom" id="2cv-0h-FkF"/>
+                    <constraint firstAttribute="trailing" secondItem="DIo-DJ-KuS" secondAttribute="trailing" id="31X-sj-edr"/>
+                    <constraint firstAttribute="trailing" secondItem="BWc-eP-3Kd" secondAttribute="trailing" constant="8" id="ClN-Um-e6z"/>
+                    <constraint firstItem="2ho-6s-zvf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="F2D-l6-o6i"/>
+                    <constraint firstAttribute="trailing" secondItem="FNM-9o-GFu" secondAttribute="trailing" id="Ijs-ef-5LD"/>
+                    <constraint firstAttribute="bottom" secondItem="BWc-eP-3Kd" secondAttribute="bottom" constant="8" id="KGH-UI-ivj"/>
+                    <constraint firstItem="DIo-DJ-KuS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="XpY-63-mod"/>
+                    <constraint firstItem="BWc-eP-3Kd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="eq0-Ep-vfS"/>
+                    <constraint firstAttribute="bottom" secondItem="FNM-9o-GFu" secondAttribute="bottom" id="fMh-lE-few"/>
+                    <constraint firstItem="FNM-9o-GFu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hBM-ln-bH0"/>
+                    <constraint firstItem="FNM-9o-GFu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="lKA-25-RJt"/>
+                    <constraint firstItem="kNO-RB-VYK" firstAttribute="leading" secondItem="2ho-6s-zvf" secondAttribute="trailing" constant="7.5" id="n5K-kE-24d"/>
+                    <constraint firstAttribute="bottom" secondItem="DIo-DJ-KuS" secondAttribute="bottom" id="pRV-vd-b9L"/>
+                    <constraint firstItem="DIo-DJ-KuS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vaT-bP-QJF"/>
+                    <constraint firstItem="2ho-6s-zvf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="wlp-RW-OJz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="BWc-eP-3Kd" id="JCp-u4-GTY"/>
+                <outlet property="speakerLabel" destination="kNO-RB-VYK" id="20v-Fj-TaW"/>
+                <outlet property="thumbnailImageView" destination="FNM-9o-GFu" id="F6V-ha-1dM"/>
+                <outlet property="titleLabel" destination="2ho-6s-zvf" id="eOf-S1-Pgz"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
