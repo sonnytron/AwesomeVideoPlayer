@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoListViewController" customModule="AwesomeVideoPlayer" customModuleProvider="target">
             <connections>
+                <outlet property="videoTableView" destination="Ug8-Rc-HiA" id="SfD-8C-WrY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,17 +21,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, Quipper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvT-8m-8BG">
-                    <rect key="frame" x="132.5" y="323" width="110" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="75" estimatedRowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ug8-Rc-HiA">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="hvT-8m-8BG" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Hhk-P9-gu9"/>
-                <constraint firstItem="hvT-8m-8BG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="XfS-Cb-Dtz"/>
+                <constraint firstItem="Ug8-Rc-HiA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="1mf-vj-XeR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ug8-Rc-HiA" secondAttribute="bottom" id="6M0-u3-5BB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ug8-Rc-HiA" secondAttribute="trailing" id="HKC-U3-QGb"/>
+                <constraint firstItem="Ug8-Rc-HiA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TTh-Wj-fon"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="499" y="56"/>
