@@ -15,9 +15,29 @@ class VideoPlayViewController: UIViewController {
     @IBOutlet var videoView: VideoView!
     
     @IBOutlet var controlsView: UIView!
+    @IBOutlet var durationSlider: UISlider!
+    @IBOutlet var timeLabel: UILabel!
+    
+    var timeObserverToken: Any?
+    
+    private let durationString: String
+    
+    init(withVideo video: NetworkVideo) {
+        guard let videoURL = URL(string: video.videoURL) else {
+            fatalError("Failed to load video URL: \(video.videoURL)")
+        }
+        durationString = (Double(video.videoDuration) as TimeInterval).msToString()
+        playerView = AVPlayer(url: videoURL)
+        super.init(nibName: "VideoPlayViewController", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init coder aDecoder: not implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        timeLabel.text = "00:00 | \(self.durationString)"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,26 +46,24 @@ class VideoPlayViewController: UIViewController {
             return
         }
         playerLayer.player = playerView
-        playerLayer.videoGravity = .resizeAspect
-    }
-    
-    init(withVideo video: NetworkVideo) {
-        guard let videoURL = URL(string: video.videoURL) else {
-            fatalError("Failed to load video URL: \(video.videoURL)")
+        
+        playerLayer.videoGravity = .resizeAspect // CMTime interval = CMTimeMakeWithSeconds(1.0, NSEC_PER_SEC);
+        self.timeObserverToken = playerView.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(1, preferredTimescale: 1), queue: DispatchQueue.main) { (time) in
+            let currentTime = CMTimeGetSeconds(time).toString()
+            self.timeLabel.text = "\(currentTime) | \(self.durationString)"
         }
-        playerView = AVPlayer(url: videoURL)
-        super.init(nibName: "VideoPlayViewController", bundle: nil)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init coder aDecoder: not implemented")
+    override func viewWillDisappear(_ animated: Bool) {
+        if let observer = timeObserverToken {
+            playerView.removeTimeObserver(observer)
+        }
     }
     
     @IBAction func closeTapped(_ sender: UIButton) {
         playerView.pause()
         dismiss(animated: true, completion: nil)
     }
-    
 }
 
 extension VideoPlayViewController {
@@ -58,4 +76,5 @@ extension VideoPlayViewController {
             playerView.pause()
         }
     }
+    
 }

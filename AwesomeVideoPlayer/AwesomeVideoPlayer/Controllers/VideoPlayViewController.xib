@@ -13,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoPlayViewController" customModule="AwesomeVideoPlayer" customModuleProvider="target">
             <connections>
                 <outlet property="controlsView" destination="26E-Rx-sRO" id="Nja-wW-SCg"/>
+                <outlet property="durationSlider" destination="x29-Jz-TvG" id="sl8-fv-nnC"/>
+                <outlet property="timeLabel" destination="IJx-nk-VF6" id="Smq-b3-1ba"/>
                 <outlet property="videoView" destination="LaY-Jy-Tc0" id="5uf-Kn-zjh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -56,11 +58,11 @@
                                     </connections>
                                 </button>
                                 <slider opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="x29-Jz-TvG">
-                                    <rect key="frame" x="52" y="0.0" width="252" height="43"/>
+                                    <rect key="frame" x="52" y="0.0" width="206" height="43"/>
                                 </slider>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJx-nk-VF6">
-                                    <rect key="frame" x="314" y="0.0" width="37" height="42"/>
-                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="00:00 / 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJx-nk-VF6">
+                                    <rect key="frame" x="268" y="0.0" width="83" height="42"/>
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
