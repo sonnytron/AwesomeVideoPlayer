@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="controlsView" destination="26E-Rx-sRO" id="Nja-wW-SCg"/>
                 <outlet property="durationSlider" destination="x29-Jz-TvG" id="sl8-fv-nnC"/>
+                <outlet property="playButton" destination="Vlr-33-HOL" id="SZw-Re-3BM"/>
                 <outlet property="timeLabel" destination="IJx-nk-VF6" id="Smq-b3-1ba"/>
                 <outlet property="videoView" destination="LaY-Jy-Tc0" id="5uf-Kn-zjh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -57,8 +58,13 @@
                                         <action selector="playToggled:" destination="-1" eventType="touchUpInside" id="KiF-n9-if7"/>
                                     </connections>
                                 </button>
-                                <slider opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="x29-Jz-TvG">
+                                <slider opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="x29-Jz-TvG">
                                     <rect key="frame" x="52" y="0.0" width="206" height="43"/>
+                                    <connections>
+                                        <action selector="userBeganScroll:" destination="-1" eventType="touchDown" id="IkK-S2-Gi7"/>
+                                        <action selector="userFinishedScroll:" destination="-1" eventType="touchUpInside" id="mgZ-7y-vmf"/>
+                                        <action selector="userScrolling:" destination="-1" eventType="valueChanged" id="r0J-NN-vKe"/>
+                                    </connections>
                                 </slider>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="00:00 / 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJx-nk-VF6">
                                     <rect key="frame" x="268" y="0.0" width="83" height="42"/>

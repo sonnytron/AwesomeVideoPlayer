@@ -17,10 +17,12 @@ class VideoPlayViewController: UIViewController {
     @IBOutlet var controlsView: UIView!
     @IBOutlet var durationSlider: UISlider!
     @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var playButton: UIButton!
     
     var timeObserverToken: Any?
     
     private let durationString: String
+    private let networkVideo: NetworkVideo
     
     init(withVideo video: NetworkVideo) {
         guard let videoURL = URL(string: video.videoURL) else {
@@ -28,6 +30,7 @@ class VideoPlayViewController: UIViewController {
         }
         durationString = (Double(video.videoDuration) as TimeInterval).msToString()
         playerView = AVPlayer(url: videoURL)
+        networkVideo = video
         super.init(nibName: "VideoPlayViewController", bundle: nil)
     }
     
@@ -49,8 +52,10 @@ class VideoPlayViewController: UIViewController {
         
         playerLayer.videoGravity = .resizeAspect // CMTime interval = CMTimeMakeWithSeconds(1.0, NSEC_PER_SEC);
         self.timeObserverToken = playerView.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(1, preferredTimescale: 1), queue: DispatchQueue.main) { (time) in
-            let currentTime = CMTimeGetSeconds(time).toString()
-            self.timeLabel.text = "\(currentTime) | \(self.durationString)"
+            let currentTime = CMTimeGetSeconds(time)
+            let duration = Float(self.networkVideo.videoDuration / 1000)
+            self.timeLabel.text = "\(currentTime.toString()) | \(self.durationString)"
+            self.durationSlider.value = Float(Float(currentTime) / duration)
         }
     }
     
@@ -64,6 +69,27 @@ class VideoPlayViewController: UIViewController {
         playerView.pause()
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func userBeganScroll(_ sender: UISlider) {
+        playerView.pause()
+        playButton.isSelected = false
+    }
+    @IBAction func userFinishedScroll(_ sender: UISlider) {
+        guard let currentTime = playerView.currentItem?.asset.duration else {
+            return
+        }
+        let newCurrentTime = Double(sender.value) * CMTimeGetSeconds(currentTime)
+        let seekTime = CMTimeMakeWithSeconds(newCurrentTime, preferredTimescale: 600)
+        playerView.seek(to: seekTime)
+    }
+    @IBAction func userScrolling(_ sender: UISlider) {
+        guard let duration = playerView.currentItem?.asset.duration else {
+            return
+        }
+        let seconds : Float64 = CMTimeGetSeconds(duration) * Double(sender.value)
+        self.timeLabel.text = "\(seconds.toString()) | \(self.durationString)"
+    }
+    
 }
 
 extension VideoPlayViewController {
@@ -76,5 +102,7 @@ extension VideoPlayViewController {
             playerView.pause()
         }
     }
+    
+    
     
 }
