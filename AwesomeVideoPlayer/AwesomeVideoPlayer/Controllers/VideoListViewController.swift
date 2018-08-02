@@ -41,7 +41,7 @@ extension VideoListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75.0
+        return (9 * self.view.frame.size.width) / 16
     }
 }
 

@@ -20,7 +20,6 @@ final class APIManager {
             if let data = data {
                 do {
                     let networkVideos = try JSONDecoder().decode([NetworkVideo].self, from: data)
-                    print("We have Videos: \(networkVideos)")
                     completion(networkVideos, nil)
                 } catch let error {
                     completion(nil, error)

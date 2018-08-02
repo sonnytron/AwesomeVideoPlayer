@@ -27,19 +27,19 @@
                         <color key="backgroundColor" white="0.0" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ho-6s-zvf">
-                        <rect key="frame" x="8" y="8" width="78.5" height="18"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <rect key="frame" x="8" y="8" width="92.5" height="21.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNO-RB-VYK">
-                        <rect key="frame" x="94" y="8" width="37.5" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="108" y="9" width="42" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWc-eP-3Kd">
-                        <rect key="frame" x="8" y="48.5" width="304" height="18"/>
+                        <rect key="frame" x="8" y="40.5" width="304" height="18"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -51,7 +51,7 @@
                     <constraint firstAttribute="trailing" secondItem="BWc-eP-3Kd" secondAttribute="trailing" constant="8" id="ClN-Um-e6z"/>
                     <constraint firstItem="2ho-6s-zvf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="F2D-l6-o6i"/>
                     <constraint firstAttribute="trailing" secondItem="FNM-9o-GFu" secondAttribute="trailing" id="Ijs-ef-5LD"/>
-                    <constraint firstAttribute="bottom" secondItem="BWc-eP-3Kd" secondAttribute="bottom" constant="8" id="KGH-UI-ivj"/>
+                    <constraint firstAttribute="bottom" secondItem="BWc-eP-3Kd" secondAttribute="bottom" constant="16" id="KGH-UI-ivj"/>
                     <constraint firstItem="DIo-DJ-KuS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="XpY-63-mod"/>
                     <constraint firstItem="BWc-eP-3Kd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="eq0-Ep-vfS"/>
                     <constraint firstAttribute="bottom" secondItem="FNM-9o-GFu" secondAttribute="bottom" id="fMh-lE-few"/>
