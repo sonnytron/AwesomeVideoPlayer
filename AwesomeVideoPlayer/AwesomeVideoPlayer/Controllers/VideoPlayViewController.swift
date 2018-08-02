@@ -2,7 +2,7 @@
 //  VideoPlayViewController.swift
 //  AwesomeVideoPlayer
 //
-//  Created by ST20894 on 2018/08/02.
+//  Created by Sonny on 2018/08/02.
 //  Copyright © 2018 Sonny. All rights reserved.
 //
 
