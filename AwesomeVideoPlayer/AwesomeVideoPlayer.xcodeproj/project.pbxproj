@@ -14,6 +14,8 @@
 		676BA9592112CE430022AE7E /* VideoPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676BA9572112CE430022AE7E /* VideoPlayViewController.swift */; };
 		676BA95A2112CE430022AE7E /* VideoPlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 676BA9582112CE430022AE7E /* VideoPlayViewController.xib */; };
 		676BA95C2112D7130022AE7E /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676BA95B2112D7130022AE7E /* VideoView.swift */; };
+		676BA95E2113231E0022AE7E /* UIButton+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676BA95D2113231E0022AE7E /* UIButton+CALayer.swift */; };
+		676BA96621133E160022AE7E /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676BA96521133E160022AE7E /* TimeIntervalExtension.swift */; };
 		67EFB5552111388A00C5823A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EFB5542111388A00C5823A /* AppDelegate.swift */; };
 		67EFB55C2111388B00C5823A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67EFB55B2111388B00C5823A /* Assets.xcassets */; };
 		67EFB55F2111388B00C5823A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67EFB55D2111388B00C5823A /* LaunchScreen.storyboard */; };
@@ -41,6 +43,8 @@
 		676BA9572112CE430022AE7E /* VideoPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayViewController.swift; sourceTree = "<group>"; };
 		676BA9582112CE430022AE7E /* VideoPlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayViewController.xib; sourceTree = "<group>"; };
 		676BA95B2112D7130022AE7E /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		676BA95D2113231E0022AE7E /* UIButton+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+CALayer.swift"; sourceTree = "<group>"; };
+		676BA96521133E160022AE7E /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
 		67EFB5512111388A00C5823A /* AwesomeVideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwesomeVideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67EFB5542111388A00C5823A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67EFB55B2111388B00C5823A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				676BA9512111DC480022AE7E /* UIImageView+URL.swift */,
+				676BA95D2113231E0022AE7E /* UIButton+CALayer.swift */,
+				676BA96521133E160022AE7E /* TimeIntervalExtension.swift */,
 			);
 			path = "UI Extensions";
 			sourceTree = "<group>";
@@ -264,7 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				676BA94B2111B6A20022AE7E /* APIManager.swift in Sources */,
+				676BA96621133E160022AE7E /* TimeIntervalExtension.swift in Sources */,
 				676BA9592112CE430022AE7E /* VideoPlayViewController.swift in Sources */,
+				676BA95E2113231E0022AE7E /* UIButton+CALayer.swift in Sources */,
 				67EFB57C211139D000C5823A /* VideoListViewController.swift in Sources */,
 				676BA9522111DC480022AE7E /* UIImageView+URL.swift in Sources */,
 				676BA95C2112D7130022AE7E /* VideoView.swift in Sources */,

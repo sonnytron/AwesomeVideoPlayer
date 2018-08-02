@@ -12,6 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoPlayViewController" customModule="AwesomeVideoPlayer" customModuleProvider="target">
             <connections>
+                <outlet property="controlsView" destination="26E-Rx-sRO" id="Nja-wW-SCg"/>
+                <outlet property="durationSlider" destination="x29-Jz-TvG" id="sl8-fv-nnC"/>
+                <outlet property="playButton" destination="Vlr-33-HOL" id="SZw-Re-3BM"/>
+                <outlet property="timeLabel" destination="IJx-nk-VF6" id="Smq-b3-1ba"/>
                 <outlet property="videoView" destination="LaY-Jy-Tc0" id="5uf-Kn-zjh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,15 +29,79 @@
                     <rect key="frame" x="0.0" y="52" width="375" height="583"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VnR-dR-Obx" customClass="InsetButton" customModule="AwesomeVideoPlayer" customModuleProvider="target">
+                    <rect key="frame" x="323" y="24" width="40" height="30"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                    <inset key="titleEdgeInsets" minX="4" minY="3" maxX="4" maxY="3"/>
+                    <state key="normal" title="Close">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="closeTapped:" destination="-1" eventType="touchUpInside" id="rmT-SU-vPD"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="26E-Rx-sRO">
+                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleAspectFit" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="b69-tm-L1V">
+                            <rect key="frame" x="12" y="4" width="351" height="42"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vlr-33-HOL">
+                                    <rect key="frame" x="0.0" y="0.0" width="42" height="42"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="Vlr-33-HOL" secondAttribute="height" multiplier="1:1" id="2LY-Sk-DOi"/>
+                                    </constraints>
+                                    <state key="normal" image="play-button"/>
+                                    <state key="selected" image="pause"/>
+                                    <state key="highlighted" image="pause"/>
+                                    <connections>
+                                        <action selector="playToggled:" destination="-1" eventType="touchUpInside" id="KiF-n9-if7"/>
+                                    </connections>
+                                </button>
+                                <slider opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="x29-Jz-TvG">
+                                    <rect key="frame" x="52" y="0.0" width="206" height="43"/>
+                                    <connections>
+                                        <action selector="userBeganScroll:" destination="-1" eventType="touchDown" id="IkK-S2-Gi7"/>
+                                        <action selector="userFinishedScroll:" destination="-1" eventType="touchUpInside" id="mgZ-7y-vmf"/>
+                                        <action selector="userScrolling:" destination="-1" eventType="valueChanged" id="r0J-NN-vKe"/>
+                                    </connections>
+                                </slider>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="00:00 / 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJx-nk-VF6">
+                                    <rect key="frame" x="268" y="0.0" width="83" height="42"/>
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="b69-tm-L1V" secondAttribute="trailing" constant="12" id="E82-cq-STw"/>
+                        <constraint firstAttribute="height" constant="50" id="Jtn-za-2Uv"/>
+                        <constraint firstItem="b69-tm-L1V" firstAttribute="leading" secondItem="26E-Rx-sRO" secondAttribute="leading" constant="12" id="m3u-XE-EdN"/>
+                        <constraint firstItem="b69-tm-L1V" firstAttribute="top" secondItem="26E-Rx-sRO" secondAttribute="top" constant="4" id="qob-Ts-Cvi"/>
+                        <constraint firstAttribute="bottom" secondItem="b69-tm-L1V" secondAttribute="bottom" constant="4" id="usf-QK-neX"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="LaY-Jy-Tc0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="28t-9v-reV"/>
+                <constraint firstItem="VnR-dR-Obx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="24" id="5V8-we-dE1"/>
                 <constraint firstItem="LaY-Jy-Tc0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="C7S-oL-JT1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LaY-Jy-Tc0" secondAttribute="bottom" constant="32" id="CmO-AP-oaf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VnR-dR-Obx" secondAttribute="trailing" constant="12" id="PaB-98-xOi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="26E-Rx-sRO" secondAttribute="bottom" id="PnF-hJ-MgT"/>
+                <constraint firstItem="26E-Rx-sRO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Uu4-29-zvA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="26E-Rx-sRO" secondAttribute="trailing" id="pAV-Dc-MJP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LaY-Jy-Tc0" secondAttribute="trailing" id="sr9-Fq-Vn2"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
+    <resources>
+        <image name="pause" width="60" height="60"/>
+        <image name="play-button" width="60" height="60"/>
+    </resources>
 </document>
