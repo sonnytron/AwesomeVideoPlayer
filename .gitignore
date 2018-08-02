@@ -10,3 +10,4 @@
 *.xcworkspace/
 project.xcworkspace/
 xcuserdata/
+*.xcuserstate

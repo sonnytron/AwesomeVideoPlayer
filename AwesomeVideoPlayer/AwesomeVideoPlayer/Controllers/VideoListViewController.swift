@@ -37,7 +37,8 @@ extension VideoListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let videos = networkVideos else { return }
         let videoSelected = videos[indexPath.row]
-        print("Selected videoObject: \(videoSelected.title)")
+        let playerVC = VideoPlayViewController(withVideo: videoSelected)
+        present(playerVC, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

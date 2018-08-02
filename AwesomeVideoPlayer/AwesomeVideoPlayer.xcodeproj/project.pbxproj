@@ -11,6 +11,9 @@
 		676BA94E2111D90D0022AE7E /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676BA94C2111D90D0022AE7E /* VideoTableViewCell.swift */; };
 		676BA94F2111D90D0022AE7E /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 676BA94D2111D90D0022AE7E /* VideoTableViewCell.xib */; };
 		676BA9522111DC480022AE7E /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676BA9512111DC480022AE7E /* UIImageView+URL.swift */; };
+		676BA9592112CE430022AE7E /* VideoPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676BA9572112CE430022AE7E /* VideoPlayViewController.swift */; };
+		676BA95A2112CE430022AE7E /* VideoPlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 676BA9582112CE430022AE7E /* VideoPlayViewController.xib */; };
+		676BA95C2112D7130022AE7E /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676BA95B2112D7130022AE7E /* VideoView.swift */; };
 		67EFB5552111388A00C5823A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EFB5542111388A00C5823A /* AppDelegate.swift */; };
 		67EFB55C2111388B00C5823A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67EFB55B2111388B00C5823A /* Assets.xcassets */; };
 		67EFB55F2111388B00C5823A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67EFB55D2111388B00C5823A /* LaunchScreen.storyboard */; };
@@ -35,6 +38,9 @@
 		676BA94C2111D90D0022AE7E /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		676BA94D2111D90D0022AE7E /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
 		676BA9512111DC480022AE7E /* UIImageView+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
+		676BA9572112CE430022AE7E /* VideoPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayViewController.swift; sourceTree = "<group>"; };
+		676BA9582112CE430022AE7E /* VideoPlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayViewController.xib; sourceTree = "<group>"; };
+		676BA95B2112D7130022AE7E /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		67EFB5512111388A00C5823A /* AwesomeVideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwesomeVideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67EFB5542111388A00C5823A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67EFB55B2111388B00C5823A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,6 +136,8 @@
 			children = (
 				67EFB57A211139D000C5823A /* VideoListViewController.swift */,
 				67EFB57B211139D000C5823A /* VideoListViewController.xib */,
+				676BA9572112CE430022AE7E /* VideoPlayViewController.swift */,
+				676BA9582112CE430022AE7E /* VideoPlayViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -139,6 +147,7 @@
 			children = (
 				676BA94C2111D90D0022AE7E /* VideoTableViewCell.swift */,
 				676BA94D2111D90D0022AE7E /* VideoTableViewCell.xib */,
+				676BA95B2112D7130022AE7E /* VideoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -234,6 +243,7 @@
 			files = (
 				67EFB55F2111388B00C5823A /* LaunchScreen.storyboard in Resources */,
 				676BA94F2111D90D0022AE7E /* VideoTableViewCell.xib in Resources */,
+				676BA95A2112CE430022AE7E /* VideoPlayViewController.xib in Resources */,
 				67EFB57D211139D000C5823A /* VideoListViewController.xib in Resources */,
 				67EFB55C2111388B00C5823A /* Assets.xcassets in Resources */,
 			);
@@ -254,8 +264,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				676BA94B2111B6A20022AE7E /* APIManager.swift in Sources */,
+				676BA9592112CE430022AE7E /* VideoPlayViewController.swift in Sources */,
 				67EFB57C211139D000C5823A /* VideoListViewController.swift in Sources */,
 				676BA9522111DC480022AE7E /* UIImageView+URL.swift in Sources */,
+				676BA95C2112D7130022AE7E /* VideoView.swift in Sources */,
 				67EFB5782111391B00C5823A /* NetworkVideo.swift in Sources */,
 				67EFB5552111388A00C5823A /* AppDelegate.swift in Sources */,
 				676BA94E2111D90D0022AE7E /* VideoTableViewCell.swift in Sources */,
