@@ -13,6 +13,8 @@ class VideoPlayViewController: UIViewController {
     
     let playerView: AVPlayer
     @IBOutlet var videoView: VideoView!
+    
+    @IBOutlet var controlsView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,6 @@ class VideoPlayViewController: UIViewController {
         }
         playerLayer.player = playerView
         playerLayer.videoGravity = .resizeAspect
-        playerView.play()
     }
     
     init(withVideo video: NetworkVideo) {
@@ -39,5 +40,22 @@ class VideoPlayViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init coder aDecoder: not implemented")
     }
+    
+    @IBAction func closeTapped(_ sender: UIButton) {
+        playerView.pause()
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
 
+extension VideoPlayViewController {
+    /// Toggle play or pause for video
+    @IBAction func playToggled(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            playerView.play()
+        } else {
+            playerView.pause()
+        }
+    }
 }
