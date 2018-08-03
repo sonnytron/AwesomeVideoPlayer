@@ -31,14 +31,36 @@ class VideoListViewController: UIViewController {
             }
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let selectedIndex = videoTableView.indexPathForSelectedRow {
+            videoTableView.deselectRow(at: selectedIndex, animated: true)
+        }
+    }
 }
 
 extension VideoListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let videos = networkVideos else { return }
-        let videoSelected = videos[indexPath.row]
-        let playerVC = VideoPlayViewController(withVideo: videoSelected)
-        present(playerVC, animated: true, completion: nil)
+        guard let currentCell = tableView.cellForRow(at: indexPath) as? VideoTableViewCell,
+            let videoObjects = networkVideos else {
+                fatalError("Failed to dequeue VideoTableViewCell for indexPath: \(indexPath)")
+        }
+        let tableRect = tableView.rectForRow(at: indexPath)
+        let absoluteRect = tableView.convert(tableRect, to: view)
+        guard let selectedImage = currentCell.thumbnailImageView else { return }
+        let imageCopy = UIImageView(frame: absoluteRect)
+        imageCopy.image = selectedImage.image
+        imageCopy.contentMode = selectedImage.contentMode
+        animateToCenter(imageView: imageCopy, viewToHide: self.videoTableView) { (completed) in
+            let videoSelected = videoObjects[indexPath.row]
+            let playerVC = VideoPlayViewController(withVideo: videoSelected)
+            self.present(playerVC, animated: true, completion: {
+                self.videoTableView.alpha = 1.0
+                self.view.backgroundColor = UIColor.white
+                imageCopy.removeFromSuperview()
+            })
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
