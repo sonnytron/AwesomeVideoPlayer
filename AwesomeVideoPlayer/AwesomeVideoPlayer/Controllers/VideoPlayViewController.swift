@@ -50,13 +50,15 @@ class VideoPlayViewController: UIViewController {
         }
         playerLayer.player = playerView
         
-        playerLayer.videoGravity = .resizeAspect // CMTime interval = CMTimeMakeWithSeconds(1.0, NSEC_PER_SEC);
+        playerLayer.videoGravity = .resizeAspect
         self.timeObserverToken = playerView.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(1, preferredTimescale: 1), queue: DispatchQueue.main) { (time) in
             let currentTime = CMTimeGetSeconds(time)
             let duration = Float(self.networkVideo.videoDuration / 1000)
             self.timeLabel.text = "\(currentTime.toString()) | \(self.durationString)"
             self.durationSlider.value = Float(Float(currentTime) / duration)
         }
+        playerView.play()
+        playButton.isSelected = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
