@@ -31,14 +31,49 @@ class VideoListViewController: UIViewController {
             }
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let selectedIndex = videoTableView.indexPathForSelectedRow {
+            videoTableView.deselectRow(at: selectedIndex, animated: true)
+        }
+    }
 }
 
 extension VideoListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let videos = networkVideos else { return }
-        let videoSelected = videos[indexPath.row]
-        let playerVC = VideoPlayViewController(withVideo: videoSelected)
-        present(playerVC, animated: true, completion: nil)
+        guard let currentCell = tableView.cellForRow(at: indexPath) as? VideoTableViewCell,
+            let videoObjects = networkVideos else {
+                fatalError("Failed to dequeue VideoTableViewCell for indexPath: \(indexPath)")
+        }
+        let tableRect = tableView.rectForRow(at: indexPath)
+        let absoluteRect = tableView.convert(tableRect, to: view)
+        guard let selectedImage = currentCell.thumbnailImageView else { return }
+        let imageCopy = UIImageView(frame: absoluteRect)
+        imageCopy.image = selectedImage.image
+        imageCopy.contentMode = selectedImage.contentMode
+        imageCopy.alpha = 0.0
+        view.addSubview(imageCopy)
+        UIView.animateKeyframes(withDuration: 0.5, delay: 0.0, options: [], animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.2, animations: {
+                self.videoTableView.alpha = 0.0
+                self.view.backgroundColor = UIColor.black
+                imageCopy.alpha = 1.0
+            })
+            UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.30, animations: {
+                imageCopy.frame = CGRect(x: 0, y: self.view.frame.size.height/2 - imageCopy.frame.size.height/2, width: self.view.frame.size.width, height: imageCopy.frame.size.height)
+            })
+        }) { (completed) in
+            let videoSelected = videoObjects[indexPath.row]
+            let playerVC = VideoPlayViewController(withVideo: videoSelected)
+            self.present(playerVC, animated: true, completion: {
+                self.videoTableView.alpha = 1.0
+                self.view.backgroundColor = UIColor.white
+                imageCopy.removeFromSuperview()
+            })
+            
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
