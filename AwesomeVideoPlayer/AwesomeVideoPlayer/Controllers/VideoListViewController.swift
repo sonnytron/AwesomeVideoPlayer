@@ -52,18 +52,7 @@ extension VideoListViewController: UITableViewDelegate {
         let imageCopy = UIImageView(frame: absoluteRect)
         imageCopy.image = selectedImage.image
         imageCopy.contentMode = selectedImage.contentMode
-        imageCopy.alpha = 0.0
-        view.addSubview(imageCopy)
-        UIView.animateKeyframes(withDuration: 0.5, delay: 0.0, options: [], animations: {
-            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.2, animations: {
-                self.videoTableView.alpha = 0.0
-                self.view.backgroundColor = UIColor.black
-                imageCopy.alpha = 1.0
-            })
-            UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.30, animations: {
-                imageCopy.frame = CGRect(x: 0, y: self.view.frame.size.height/2 - imageCopy.frame.size.height/2, width: self.view.frame.size.width, height: imageCopy.frame.size.height)
-            })
-        }) { (completed) in
+        animateToCenter(imageView: imageCopy, viewToHide: self.videoTableView) { (completed) in
             let videoSelected = videoObjects[indexPath.row]
             let playerVC = VideoPlayViewController(withVideo: videoSelected)
             self.present(playerVC, animated: true, completion: {
@@ -71,9 +60,7 @@ extension VideoListViewController: UITableViewDelegate {
                 self.view.backgroundColor = UIColor.white
                 imageCopy.removeFromSuperview()
             })
-            
         }
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
