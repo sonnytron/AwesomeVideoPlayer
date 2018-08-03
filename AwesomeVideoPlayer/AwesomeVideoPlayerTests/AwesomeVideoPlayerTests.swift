@@ -11,9 +11,14 @@ import XCTest
 
 class AwesomeVideoPlayerTests: XCTestCase {
     
+    var apiManager: APIManager!
+    var sessionTest: URLSession!
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        apiManager = APIManager()
+        sessionTest = URLSession(configuration: .default)
     }
     
     override func tearDown() {
@@ -21,9 +26,23 @@ class AwesomeVideoPlayerTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testEndPoint200() {
+        let url = URL(string: "https://quipper.github.io/native-technical-exam/playlist.json")
+        let promise = expectation(description: "Completion handler invoked")
+        var statusCode: Int?
+        var responseError: Error?
+        guard let dataURL = url else {
+            XCTFail("The url is incorrect! \(String(describing: url))")
+            return
+        }
+        sessionTest.dataTask(with: dataURL) { (_, response, error) in
+            statusCode = (response as? HTTPURLResponse)?.statusCode
+            responseError = error
+            promise.fulfill()
+        }.resume()
+        waitForExpectations(timeout: 10, handler: nil)
+        XCTAssertNil(responseError)
+        XCTAssertEqual(statusCode, 200)
     }
     
     func testPerformanceExample() {

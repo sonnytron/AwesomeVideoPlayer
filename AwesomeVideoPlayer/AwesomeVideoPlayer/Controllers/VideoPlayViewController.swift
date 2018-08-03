@@ -74,6 +74,7 @@ class VideoPlayViewController: UIViewController {
         playerView.pause()
         playButton.isSelected = false
     }
+    
     @IBAction func userFinishedScroll(_ sender: UISlider) {
         guard let currentTime = playerView.currentItem?.asset.duration else {
             return
@@ -82,6 +83,7 @@ class VideoPlayViewController: UIViewController {
         let seekTime = CMTimeMakeWithSeconds(newCurrentTime, preferredTimescale: 600)
         playerView.seek(to: seekTime)
     }
+    
     @IBAction func userScrolling(_ sender: UISlider) {
         guard let duration = playerView.currentItem?.asset.duration else {
             return
@@ -102,7 +104,4 @@ extension VideoPlayViewController {
             playerView.pause()
         }
     }
-    
-    
-    
 }

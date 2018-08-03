@@ -22,9 +22,16 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FNM-9o-GFu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="74.5"/>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Prp-fV-635">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="75" id="aTD-0J-nLr"/>
+                        </constraints>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DIo-DJ-KuS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="74.5"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ho-6s-zvf">
                         <rect key="frame" x="8" y="8" width="92.5" height="21.5"/>
@@ -39,8 +46,8 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWc-eP-3Kd">
-                        <rect key="frame" x="8" y="40.5" width="304" height="18"/>
-                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                        <rect key="frame" x="8" y="45.5" width="304" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -48,18 +55,21 @@
                 <constraints>
                     <constraint firstItem="kNO-RB-VYK" firstAttribute="bottom" secondItem="2ho-6s-zvf" secondAttribute="bottom" id="2cv-0h-FkF"/>
                     <constraint firstAttribute="trailing" secondItem="DIo-DJ-KuS" secondAttribute="trailing" id="31X-sj-edr"/>
+                    <constraint firstItem="Prp-fV-635" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Bl7-c1-QmN"/>
                     <constraint firstAttribute="trailing" secondItem="BWc-eP-3Kd" secondAttribute="trailing" constant="8" id="ClN-Um-e6z"/>
                     <constraint firstItem="2ho-6s-zvf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="F2D-l6-o6i"/>
                     <constraint firstAttribute="trailing" secondItem="FNM-9o-GFu" secondAttribute="trailing" id="Ijs-ef-5LD"/>
-                    <constraint firstAttribute="bottom" secondItem="BWc-eP-3Kd" secondAttribute="bottom" constant="16" id="KGH-UI-ivj"/>
                     <constraint firstItem="DIo-DJ-KuS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="XpY-63-mod"/>
                     <constraint firstItem="BWc-eP-3Kd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="eq0-Ep-vfS"/>
+                    <constraint firstItem="Prp-fV-635" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="f5Q-V7-EIk"/>
                     <constraint firstAttribute="bottom" secondItem="FNM-9o-GFu" secondAttribute="bottom" id="fMh-lE-few"/>
                     <constraint firstItem="FNM-9o-GFu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hBM-ln-bH0"/>
                     <constraint firstItem="FNM-9o-GFu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="lKA-25-RJt"/>
+                    <constraint firstItem="BWc-eP-3Kd" firstAttribute="top" secondItem="2ho-6s-zvf" secondAttribute="bottom" constant="16" id="mEV-oI-KuB"/>
                     <constraint firstItem="kNO-RB-VYK" firstAttribute="leading" secondItem="2ho-6s-zvf" secondAttribute="trailing" constant="7.5" id="n5K-kE-24d"/>
                     <constraint firstAttribute="bottom" secondItem="DIo-DJ-KuS" secondAttribute="bottom" id="pRV-vd-b9L"/>
                     <constraint firstItem="DIo-DJ-KuS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vaT-bP-QJF"/>
+                    <constraint firstAttribute="trailing" secondItem="Prp-fV-635" secondAttribute="trailing" id="wXY-7c-9VQ"/>
                     <constraint firstItem="2ho-6s-zvf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="wlp-RW-OJz"/>
                 </constraints>
             </tableViewCellContentView>
